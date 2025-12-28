@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8" />
   <title>ActForge Workout</title>
@@ -6,24 +8,25 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ActForge Workout" />
   <meta property="og:title" content="ActForge Workout" />
-  <meta property="og:description" content="" />
   <meta property="og:image" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/Promo1.png" />
   <meta property="og:url" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/" />
 
   <!-- Twitter / WhatsApp -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ActForge Workout" />
-  <meta name="twitter:description" content="" />
   <meta name="twitter:image" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/Promo1.png" />
+
+  <!-- ⏱ Meta refresh fallback -->
+  <meta http-equiv="refresh" content="2;url=https://apps.apple.com/app/actforge-workout/id6755353801">
 
   <script>
     function redirect() {
-      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
 
-      if (/android/i.test(userAgent)) {
+      if (/android/i.test(ua)) {
         window.location.href =
           "https://play.google.com/store/apps/details?id=com.actforge.workout";
-      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
         window.location.href =
           "https://apps.apple.com/app/actforge-workout/id6755353801";
       } else {
@@ -31,5 +34,30 @@
           "https://apps.apple.com/app/actforge-workout/id6755353801";
       }
     }
+
+    window.onload = redirect;
   </script>
 </head>
+
+<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 40px;">
+  <p>Redirecting to ActForge Workout…</p>
+
+  <!-- 👇 Manual fallback (critical for Meta browsers) -->
+  <p>If nothing happens, tap below:</p>
+
+  <a
+    href="https://apps.apple.com/app/actforge-workout/id6755353801"
+    style="
+      display: inline-block;
+      padding: 12px 20px;
+      background: #ff6a00;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    "
+  >
+    Open App Store / Play Store
+  </a>
+</body>
+</html>
