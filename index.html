@@ -4,25 +4,35 @@
   <meta charset="UTF-8" />
   <title>ActForge Workout</title>
 
+  <meta property="og:url" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ActForge Workout" />
+  <meta property="og:description" content="Download ActForge Workout for iOS or Android." />
+  <meta property="og:image" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/Promo1.png" />
+
   <script>
     function redirect() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var androidUrl = "https://play.google.com/store/apps/details?id=com.actforge.workout";
+      var iosUrl = "https://apps.apple.com/app/actforge-workout/id6755353801";
 
       if (/android/i.test(userAgent)) {
-        window.location.href =
-          "https://play.google.com/store/apps/details?id=com.actforge.workout";
+        window.location.replace(androidUrl);
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        window.location.href =
-          "https://apps.apple.com/app/actforge-workout/id6755353801";
-      } else {
-        window.location.href =
-          "https://apps.apple.com/app/actforge-workout/id6755353801";
+        window.location.replace(iosUrl);
       }
+      // If desktop/bot, we stay on the page so the crawler sees the correct Meta Tags
     }
+    window.onload = redirect;
   </script>
 </head>
-
-<body onload="redirect()">
-  <p>Redirecting to ActForge Workout…</p>
+<body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+  <h2>Opening ActForge Workout...</h2>
+  <p>If you are not redirected, select your store:</p>
+  
+  <div style="margin-top: 20px;">
+    <a href="https://apps.apple.com/app/actforge-workout/id6755353801" style="display:inline-block; padding:10px 20px; background:#000; color:#fff; border-radius:5px; text-decoration:none; margin:5px;">App Store (iOS)</a>
+    <a href="https://play.google.com/store/apps/details?id=com.actforge.workout" style="display:inline-block; padding:10px 20px; background:#3DDC84; color:#000; border-radius:5px; text-decoration:none; margin:5px;">Play Store (Android)</a>
+  </div>
 </body>
 </html>
