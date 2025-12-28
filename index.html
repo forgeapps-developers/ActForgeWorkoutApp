@@ -4,57 +4,25 @@
   <meta charset="UTF-8" />
   <title>ActForge Workout</title>
 
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="ActForge Workout" />
-  <meta property="og:title" content="ActForge Workout" />
-  <meta property="og:image" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/Promo1.png" />
-  <meta property="og:url" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/" />
-
   <script>
-    function doRedirect() {
+    function redirect() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      var iosUrl = "https://apps.apple.com/app/actforge-workout/id6755353801";
-      var androidUrl = "https://play.google.com/store/apps/details?id=com.actforge.workout";
 
-      // 1. Check for Android specifically
       if (/android/i.test(userAgent)) {
-        window.location.href = androidUrl;
-      } 
-      // 2. Check for iOS
-      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        window.location.href = iosUrl;
-      } 
-      // 3. Desktop or unknown fallback
-      else {
-        // If you want desktop users to see a specific landing page, put it here.
-        // Otherwise, Apple Store is a common default.
-        window.location.href = iosUrl;
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=com.actforge.workout";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href =
+          "https://apps.apple.com/app/actforge-workout/id6755353801";
+      } else {
+        window.location.href =
+          "https://apps.apple.com/app/actforge-workout/id6755353801";
       }
     }
-
-    // RUN REDIRECT ON PAGE LOAD
-    window.onload = doRedirect;
   </script>
 </head>
 
-<body style="font-family: sans-serif; text-align: center; padding: 50px 20px; line-height: 1.6;">
-  <h2>Redirecting to ActForge Workout...</h2>
-  <p>We are opening the store for your device.</p>
-
-  <div style="margin-top: 30px;">
-    <p>If nothing happens, tap your store below:</p>
-    
-    <a href="https://play.google.com/store/apps/details?id=com.actforge.workout" 
-       style="display: inline-block; padding: 12px 24px; background: #34a853; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 5px;">
-       Google Play (Android)
-    </a>
-
-    <br>
-
-    <a href="https://apps.apple.com/app/actforge-workout/id6755353801" 
-       style="display: inline-block; padding: 12px 24px; background: #007aff; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 5px;">
-       App Store (iOS)
-    </a>
-  </div>
+<body onload="redirect()">
+  <p>Redirecting to ActForge Workout…</p>
 </body>
 </html>
