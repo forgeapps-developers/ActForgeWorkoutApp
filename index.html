@@ -16,34 +16,22 @@
   <meta name="twitter:title" content="ActForge Workout" />
   <meta name="twitter:image" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/Promo1.png" />
 
-  <!-- ⏱ Meta refresh fallback -->
-  <meta http-equiv="refresh" content="2;url=https://apps.apple.com/app/actforge-workout/id6755353801">
+  <script>
+    function redirect() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-<script>
-  function redirect() {
-    var ua = navigator.userAgent || navigator.vendor || window.opera;
-
-    // 🔹 Android (including Facebook / Instagram in-app browser)
-    if (/android/i.test(ua)) {
-      window.location.href =
-        "intent://details?id=com.actforge.workout#Intent;scheme=market;package=com.android.vending;end";
-      return;
+      if (/android/i.test(userAgent)) {
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=com.actforge.workout";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href =
+          "https://apps.apple.com/app/actforge-workout/id6755353801";
+      } else {
+        window.location.href =
+          "https://apps.apple.com/app/actforge-workout/id6755353801";
+      }
     }
-
-    // 🔹 iOS
-    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-      window.location.href =
-        "https://apps.apple.com/app/actforge-workout/id6755353801";
-      return;
-    }
-
-    // 🔹 Fallback (desktop)
-    window.location.href =
-      "https://apps.apple.com/app/actforge-workout/id6755353801";
-  }
-
-  window.onload = redirect;
-</script>
+  </script>
   
 </head>
 
