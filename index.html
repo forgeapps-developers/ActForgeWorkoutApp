@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <title>ActForge Workout</title>
 
+  <meta property="og:url" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ActForge Workout" />
+  <meta property="og:description" content="Download ActForge Workout for iOS and Android." />
+  <meta property="og:image" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/Promo1.png" />
+
   <script>
     function redirect() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -22,7 +28,20 @@
   </script>
 </head>
 
-<body onload="redirect()">
-  <p>Redirecting to ActForge Workout…</p>
+<body onload="redirect()" style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+  <h3>Redirecting to ActForge Workout...</h3>
+  <p>If the store does not open, please select your device:</p>
+  
+  <div style="margin-top: 20px;">
+    <a href="https://play.google.com/store/apps/details?id=com.actforge.workout" 
+       style="display: inline-block; padding: 12px 25px; background: #34a853; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px;">
+       Google Play (Android)
+    </a>
+    <br>
+    <a href="https://apps.apple.com/app/actforge-workout/id6755353801" 
+       style="display: inline-block; padding: 12px 25px; background: #000; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px;">
+       App Store (iOS)
+    </a>
+  </div>
 </body>
 </html>
