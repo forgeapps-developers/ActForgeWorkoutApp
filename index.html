@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <title>ActForge Workout</title>
-    <meta property="og:url" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/" />
-    <meta property="og:title" content="Get ActForge Workout" />
-    <meta property="og:description" content="Available on iOS and Android" />
-    <meta property="og:image" content="https://forgeapps-developers.github.io/ActForgeWorkoutApp/Promo1.png" />
+  <meta charset="UTF-8" />
+  <title>ActForge Workout</title>
 
-    <script>
-        function doRedirect() {
-            var ua = navigator.userAgent || navigator.vendor || window.opera;
-            var ios = "https://apps.apple.com/app/actforge-workout/id6755353801";
-            var android = "https://play.google.com/store/apps/details?id=com.actforge.workout";
+  <script>
+    function redirect() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            if (/android/i.test(ua)) {
-                window.location.replace(android);
-            } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-                window.location.replace(ios);
-            }
-            // NO 'ELSE' REDIRECT. If it's a bot or desktop, stay on this page.
-        }
-        window.onload = doRedirect;
-    </script>
+      if (/android/i.test(userAgent)) {
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=com.actforge.workout";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href =
+          "https://apps.apple.com/app/actforge-workout/id6755353801";
+      } else {
+        window.location.href =
+          "https://apps.apple.com/app/actforge-workout/id6755353801";
+      }
+    }
+  </script>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding: 50px;">
-    <h2>Opening ActForge Workout...</h2>
-    <p>Select your store if you are not redirected:</p>
-    <a href="https://play.google.com/store/apps/details?id=com.actforge.workout" style="display:inline-block; padding:15px; background:#34a853; color:#fff; border-radius:8px; text-decoration:none; margin:10px;">Google Play (Android)</a>
-    <a href="https://apps.apple.com/app/actforge-workout/id6755353801" style="display:inline-block; padding:15px; background:#007aff; color:#fff; border-radius:8px; text-decoration:none; margin:10px;">App Store (iOS)</a>
+
+<body onload="redirect()">
+  <p>Redirecting to ActForge Workout…</p>
 </body>
 </html>
